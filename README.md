@@ -46,3 +46,11 @@
   
   sort(a.begin(), a.end(), comp); // 0 1 2 3 4
 ```
+
+## Function Pointer
+
+```
+typedef void (*func)();
+map<string, func> key2func;
+
+```
