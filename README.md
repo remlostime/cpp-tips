@@ -49,7 +49,7 @@
 
 ## Function Pointer
 
-```
+```cpp
 typedef void (*func)();
 
 map<string, func> key2func;
