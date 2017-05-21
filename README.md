@@ -51,6 +51,10 @@
 
 ```
 typedef void (*func)();
+
 map<string, func> key2func;
+
+void functionA(func func1);
+void functionB(void (*func)());
 
 ```
