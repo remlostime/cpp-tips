@@ -62,6 +62,8 @@ void functionB(void (*func)());
 ## [Socket Programming](http://www.geeksforgeeks.org/socket-programming-cc/)
 
 ```cpp
+#define PORT 8080
+
 struct sockaddr_in address;
 int sock = 0, valread;
 struct sockaddr_in serv_addr;
