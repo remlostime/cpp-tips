@@ -95,3 +95,11 @@ printf("Hello message sent\n");
 valread = read( sock , buffer, 1024);
 printf("%s\n",buffer );
 ```
+
+## Exception and Assert
+
+```cpp
+assert(a > 0)
+
+throw runtime_error("There is an error");
+```
