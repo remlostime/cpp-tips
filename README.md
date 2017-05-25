@@ -103,3 +103,63 @@ assert(a > 0)
 
 throw runtime_error("There is an error");
 ```
+
+## Set, Compare, Insert
+
+```cpp
+struct Node {
+	int x;
+	RectNode rect;
+	bool end;
+	int index;
+	
+	Node& operator=(Node const& copy)
+	{
+		this->x = copy.x;
+		this->rect = copy.rect;
+		this->end = copy.end;
+		this->index = copy.index;
+		return *this;
+	}
+	
+	Node(Node const &copy) {
+		x = copy.x;
+		rect = copy.rect;
+		end = copy.end;
+		index = copy.index;
+	}
+	
+	Node(int x, RectNode &rect, bool end, int index) {
+		this->x = x;
+		this->rect = RectNode(rect.topLeft, rect.topRight, rect.bottomLeft, rect.bottomRight);
+		this->end = end;
+		this->index = index;
+	}
+	
+	bool operator==(const Node& other) const
+	{
+		return this->index == other.index;
+	}
+	
+	bool operator<(const Node& other) const
+	{
+		if (this->x < other.x) {
+			return true;
+		}
+		
+		if (this->x > other.x) {
+			return false;
+		}
+		
+		return this->end;
+	}
+};
+
+struct NodeComp {
+	bool operator()(const Node& lhs, const Node& rhs) const { 
+		return lhs.index < rhs.index;
+	}
+};
+
+set<Node, NodeComp> s;
+```
