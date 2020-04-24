@@ -1,5 +1,11 @@
 # cpp-tips
 
+## Deque
+```cpp
+deque<int> d;
+d.rbegin() == --d.end();
+```
+
 ## Priority Queue
 ```cpp
   priority_queue<int> maxHeap;
